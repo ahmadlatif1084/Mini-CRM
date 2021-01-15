@@ -3,7 +3,7 @@ services:
   app:
     build:
       args:
-        user: sammy
+        user: ahmad
         uid: 1000
       context: ./
       dockerfile: Dockerfile
@@ -19,6 +19,7 @@ services:
   db:
     image: mysql:8.0
     container_name: minicrm-db
+    command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
     ports:
       - "3306:3306"
